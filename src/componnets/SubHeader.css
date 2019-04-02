@@ -1,0 +1,47 @@
+.sub-header-wrap {
+  height: 62px;
+  background-color: #f6f6f6;
+  border-bottom: #d8d8d8;
+  display: flex;
+  padding: 0 18px;
+  align-items: center;
+}
+
+.location {
+  font-size: 16px;
+  margin-right: 18px;
+}
+.location::after {
+  margin-left: 6px;
+  content: ' ';
+  display: inline-block;
+  width: 12px;
+  height: 7px;
+  background: url('/assets/images/i_city.png') 0 0 no-repeat;
+  background-size: 12px 7px;
+}
+
+.search {
+  position: relative;
+  flex: 1;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  font-size: 15px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  padding: 0 18px 0 30px;
+  color: #777;
+}
+
+.search::before {
+  position: absolute;
+  left: 9px;
+  top: 12px;
+  content: ' ';
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url('/assets/images/search_ico_01.png') 0 0 no-repeat;
+  background-size: 17px 17px;
+}
