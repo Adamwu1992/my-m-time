@@ -1,33 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import LocationSelect from './LocationSelect';
+import React, { useState, useEffect, Fragment } from 'react';
 import http from '../http';
 
-console.log(React.version)
 
 export default function Movies() {
 
   const [movies, setMovies] = useState([]);
-  const [location, setLocation] = useState();
 
   useEffect(() => {
-    console.log('location changed', location);
-    const fetchMovies = async () => {
-      const { data } = await http.get(`http://localhost:5000/hot-play-movies?locationId=${location.id}`);
-      setMovies(data.movies);
+    // const fetchMovies = async () => {
+    //   const { data } = await http.get(`http://localhost:5000/hot-play-movies?locationId=290`);
+    //   setMovies(data.movies);
+    // }
+    const fetchMovies = () => {
+      http.get(`http://localhost:5000/hot-play-movies?locationId=290`).then(res => {
+        setMovies(res.data.movies);
+      })
     }
-    if (location) {
-      fetchMovies();
-    }
-  }, [location]);
+    fetchMovies();
+  }, []);
 
-  function handleSelect(location) {
-    console.log('handle select', location);
-    setLocation(location);
-  }
 
   return (
-    <>
-      <h2>Movies: <LocationSelect onSelect={handleSelect} /></h2>
+    <Fragment>
       <ul>
         {
           movies.map(m => (
@@ -35,6 +29,6 @@ export default function Movies() {
           ))
         }
       </ul>
-    </>
+    </Fragment>
   )
 }

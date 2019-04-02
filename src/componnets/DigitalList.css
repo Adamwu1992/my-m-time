@@ -1,0 +1,35 @@
+.digital-wrap {
+  background-color: #fff;
+  padding: 5px 15px;
+}
+
+.header {
+  height: 42px;
+  line-height: 42px;
+}
+.header .title, .tail {
+  font-size: 18px;
+  font-weight: bold;
+}
+.header .icon {
+  float: right;
+  margin-right: 10px;
+}
+.header .icon img {
+  width: 17px;
+  height: 10px;
+  transform: rotate(-90deg);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style: none;
+  flex: 0 0 30%;
+  margin: 0 5px;
+}

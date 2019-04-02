@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Movies from '../componnets/Movies';
+import Digital from '../componnets/DigitalList';
 
 export default function Home() {
   return (
-    <h1>Home</h1>
+    <Digital total={59} title="正在热映" />
   )
 }

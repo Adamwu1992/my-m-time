@@ -1,0 +1,16 @@
+.movie-card-wrap {
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+.name {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  height: 40px;
+  padding-top: 6px;
+  margin-bottom: 12px;
+}
