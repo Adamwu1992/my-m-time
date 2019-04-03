@@ -1,14 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './SubHeader.css';
+import { Picker, List } from 'antd-mobile';
 
 function SubHeader(props) {
   console.log(props);
-  const { search, location } = props
+  const { location } = props;
+  const data = [
+    { value: 1, label: '1' },
+    { value: 2, label: '2' },
+    { value: 3, label: '3' },
+    { value: 4, label: '4' },
+  ]
   return (
     <div className="sub-header-wrap">
-      <div className="location">{location.locationName}</div>
-      <div className="search">影片/影院/影人，任你搜</div>
+      <List>
+        <Picker data={data} cols={1}>
+          <List.Item className="location">{location.locationName}</List.Item>
+        </Picker>
+        
+        <div className="search">影片/影院/影人，任你搜</div>
+      </List>
+
     </div>
   )
 }

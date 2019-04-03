@@ -5,6 +5,7 @@ import SubHeader from './containers/SubHeader';
 import routes from './routes';
 import store from './store/reducer';
 import { Provider } from 'react-redux';
+import 'antd-mobile/dist/antd-mobile.css';
 
 class App extends Component {
   render() {
