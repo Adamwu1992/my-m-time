@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './containers/Header';
 import SubHeader from './containers/SubHeader';
 import routes from './routes';
-import store from './store/reducer';
+import store from './store';
 import { Provider } from 'react-redux';
 import 'antd-mobile/dist/antd-mobile.css';
 
