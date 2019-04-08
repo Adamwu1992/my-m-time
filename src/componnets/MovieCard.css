@@ -2,6 +2,11 @@
   position: relative;
 }
 
+.img {
+  height: 160px;
+  overflow: hidden;
+}
+
 img {
   width: 100%;
 }
@@ -9,8 +14,6 @@ img {
 .name {
   text-align: center;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 40px;
   height: 40px;
-  padding-top: 6px;
-  margin-bottom: 12px;
 }
