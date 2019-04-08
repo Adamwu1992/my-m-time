@@ -1,5 +1,4 @@
 const initialState = {
-  cityList: [],
   city: {},
   search: '',
 }
@@ -12,11 +11,6 @@ export default function (state = initialState, action) {
         ...state,
         city: payload.city
       };
-    case 'city/list/set':
-      return {
-        ...state,
-        cityList: payload.cityList
-      }
     case 'search/set':
       return {
         ...state,

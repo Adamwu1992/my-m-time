@@ -7,5 +7,8 @@ function* queryHotMovies(action) {
 }
 
 export default function* watch() {
-  yield takeEvery('home/hotmovies/list', queryHotMovies)
+  yield takeEvery('home/hotmovies/list', queryHotMovies);
+
+  // triggered when current city changed
+  yield takeEvery('city/set', queryHotMovies);
 }

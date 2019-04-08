@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Digital from '../componnets/DigitalList';
 import { connect } from 'react-redux';
 
 function Home(props) {
-  const { currentCity, queryHotMovies, hotMovies } = props;
-
-  useEffect(() => {
-    queryHotMovies(currentCity);
-  }, [currentCity])
+  const { hotMovies } = props;
 
   return (
     <Digital
@@ -19,16 +15,13 @@ function Home(props) {
 
 function mapStateToProps(state) {
   return {
-    currentCity: state.sub_header.city,
     ...state.home
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    queryHotMovies(payload) {
-      dispatch({ type: 'home/hotmovies/list', payload });
-    }
+    
   }
 }
 

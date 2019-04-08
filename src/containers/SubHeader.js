@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './SubHeader.css';
 import { Picker } from 'antd-mobile';
 import { getCityList } from '../api/city';
 
 function SubHeader(props) {
-  const { cityList, city, setCityList, setCity } = props;
+  const { city, setCity } = props;
+  const [cityList, setCityList] = useState([]);
+  
   let cityPickerData = [];
   if (cityList && cityList.length) {
     cityPickerData = cityList.map(city => ({
@@ -68,13 +70,6 @@ function mapDispatchToProps(dispatch) {
       dispatch({
         type: 'city/set',
         payload: { city }
-      })
-    },
-
-    setCityList(cityList) {
-      dispatch({
-        type: 'city/list/set',
-        payload: { cityList }
       })
     }
   }
