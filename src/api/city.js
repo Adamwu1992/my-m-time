@@ -1,8 +1,4 @@
-const resp = {
-  code: '00000000',
-  success: true,
-  data: null
-}
+import { resolve } from './helper'
 
 const cityList = [
   { id: 292, n: '上海', pinyinFull: 'Shanghai', pinyinShort: 'sh' },
@@ -17,7 +13,4 @@ const cityList = [
   { id: 373, n: '佛山', pinyinFull: 'Foshan', pinyinShort: 'fs' },
 ]
 
-export const getCityList = () => Promise.resolve({
-  ...resp,
-  data: cityList
-})
+export const getCityList = () => resolve(cityList)

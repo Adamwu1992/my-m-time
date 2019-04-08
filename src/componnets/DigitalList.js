@@ -4,7 +4,7 @@ import './DigitalList.css';
 
 export default function DigitalList(props) {
   const { data = [], total, title } = props;
-  const renderData = data.slice(0, 8);
+  const renderData = data.slice(0, 3);
 
   return (
     <div className="digital-wrap">

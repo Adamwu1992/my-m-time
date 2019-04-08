@@ -1,8 +1,4 @@
-const resp = {
-  code: '00000000',
-  success: true,
-  data: null
-}
+import { resolve } from './helper';
 
 const hotMovies = [
   {
@@ -487,7 +483,4 @@ const hotMovies = [
   }
 ]
 
-export const getHotMovies = () => Promise.resolve({
-  ...resp,
-  data: hotMovies
-})
+export const getHotMovies = () => resolve(hotMovies)

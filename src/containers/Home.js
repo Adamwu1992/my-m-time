@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Digital from '../componnets/DigitalList';
 import { connect } from 'react-redux';
-import { getHotMovies } from '../api/movie';
 
 function Home(props) {
-  const { currentCity } = props;
-  const [hotMovies, setHotMovies] = useState([]);
+  const { currentCity, queryHotMovies, hotMovies } = props;
 
   useEffect(() => {
-    const queryHotMovies = async () => {
-      if (!currentCity || !currentCity.id) return;
-      const { data } = await getHotMovies(currentCity);
-      setHotMovies(data);
-      console.log(currentCity, data);
-    }
-    queryHotMovies();
+    queryHotMovies(currentCity);
   }, [currentCity])
 
   return (
@@ -34,8 +26,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setLocation(location) {
-      dispatch('home/location/set', { payload: location })
+    queryHotMovies(payload) {
+      dispatch({ type: 'home/hotmovies/list', payload });
     }
   }
 }
